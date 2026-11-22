@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipeline — DevOps & CI/CD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080d18;
+  --panel: #101827;
+  --line: #202c40;
+  --text: #edf3ff;
+  --muted: #8a99b2;
+  --blue: #6da9ff;
+  --green: #52d6a0;
+  --purple: #a995ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+}
+header {
+  height: 76px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+}
+.logo { font-size: 19px; font-weight: 800; letter-spacing: 1px; }
+.logo span { color: var(--blue); }
+.tag {
+  color: var(--green);
+  font: 11px 'DM Mono', monospace;
+  border: 1px solid #285c4b;
+  padding: 8px 12px;
+  border-radius: 30px;
+}
+main { max-width: 1120px; margin: auto; padding: 75px 25px; }
+.eyebrow {
+  color: var(--blue);
+  font: 12px 'DM Mono', monospace;
+  letter-spacing: 2px;
+}
+h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  line-height: 1.12;
+  letter-spacing: -3px;
+  margin: 20px 0;
+}
+h1 span { color: var(--blue); }
+.intro {
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+.section-title {
+  font-size: 15px;
+  margin: 65px 0 22px;
+}
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.stage, .card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 22px;
+}
+.number {
+  color: var(--blue);
+  font: 12px 'DM Mono', monospace;
+}
+.stage h3 { font-size: 15px; margin: 20px 0 8px; }
+.stage p, .card p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.stage .symbol { font-size: 24px; }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.card h3 { font-size: 16px; margin-top: 0; }
+.card .label {
+  font: 11px 'DM Mono', monospace;
+  color: var(--purple);
+}
+footer {
+  border-top: 1px solid var(--line);
+  padding: 25px 7%;
+  color: var(--muted);
+  font: 11px 'DM Mono', monospace;
+  text-align: center;
+}
+@media(max-width:700px) {
+  .pipeline { grid-template-columns: 1fr 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  main { padding-top: 50px; }
+}
+@media(max-width:420px) {
+  .pipeline { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">PIPELINE<span>.</span></div>
+  <div class="tag">MODULE 06 / DEVOPS</div>
+</header>
+
+<main>
+  <div class="eyebrow">AUTOMATION · VERSION CONTROL · DELIVERY</div>
+  <h1>Build. Test.<br><span>Deploy.</span> Repeat.</h1>
+  <p class="intro">
+    A practical exploration of DevOps and CI/CD workflows.
+    This project demonstrates how source code moves through
+    version control, automated checks and deployment.
+  </p>
+
+  <h2 class="section-title">01 / THE CI/CD PIPELINE</h2>
+  <div class="pipeline">
+    <div class="stage">
+      <div class="number">STEP 01</div>
+      <div class="symbol">⌘</div>
+      <h3>Code</h3>
+      <p>Write and maintain application source files.</p>
+    </div>
+    <div class="stage">
+      <div class="number">STEP 02</div>
+      <div class="symbol">⑂</div>
+      <h3>Commit</h3>
+      <p>Track changes and manage versions using Git.</p>
+    </div>
+    <div class="stage">
+      <div class="number">STEP 03</div>
+      <div class="symbol">⚙</div>
+      <h3>Build & Test</h3>
+      <p>Run automated workflow checks through CI.</p>
+    </div>
+    <div class="stage">
+      <div class="number">STEP 04</div>
+      <div class="symbol">↗</div>
+      <h3>Deploy</h3>
+      <p>Publish validated changes to a hosting environment.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">02 / CORE CONCEPTS</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="label">VERSION CONTROL</div>
+      <h3>Git & GitHub</h3>
+      <p>Manage source code, track changes, create branches and collaborate through repositories.</p>
+    </div>
+    <div class="card">
+      <div class="label">CONTINUOUS INTEGRATION</div>
+      <h3>Automated Checks</h3>
+      <p>Validate code changes automatically whenever updates are pushed to the repository.</p>
+    </div>
+    <div class="card">
+      <div class="label">CONTINUOUS DELIVERY</div>
+      <h3>Reliable Releases</h3>
+      <p>Prepare validated application changes for deployment through a repeatable workflow.</p>
+    </div>
+    <div class="card">
+      <div class="label">CLOUD DEVOPS</div>
+      <h3>AWS Concepts</h3>
+      <p>Explore AWS CodePipeline and CodeBuild as services used in cloud-based automation.</p>
+    </div>
+  </div>
+</main>
+
+<footer>MODULE 06 · AWS DEVOPS & CI/CD · LEARNING IMPLEMENTATION</footer>
+</body>
+</html>
